@@ -169,7 +169,7 @@ export default function App() {
       <Navbar currentTab={currentTab} onNavigate={handleNavigate} />
 
       {/* Main View Container */}
-      <main className="flex-1">
+      <main className="flex-1 pb-16 md:pb-0">
         {currentTab === 'landing' && (
           <LandingPage 
             onNavigate={handleNavigate} 

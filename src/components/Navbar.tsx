@@ -45,12 +45,12 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onNavigate }) => {
           </div>
         </div>
 
-        {/* Center Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-1 bg-slate-100/80 p-1 rounded-full border border-slate-200/80">
+        {/* Center Desktop & Tablet Navigation Links */}
+        <nav className="hidden md:flex items-center gap-1 bg-slate-100/80 p-1 rounded-full border border-slate-200/80">
           <button
             onClick={() => onNavigate('landing')}
             id="nav-tab-landing"
-            className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 ${
               currentTab === 'landing'
                 ? 'bg-white text-indigo-600 shadow-xs'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
@@ -63,59 +63,59 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onNavigate }) => {
           <button
             onClick={() => onNavigate('wizard')}
             id="nav-tab-wizard"
-            className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 ${
               currentTab === 'wizard'
                 ? 'bg-white text-indigo-600 shadow-xs'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
             }`}
           >
             <UserPlus className="w-3.5 h-3.5" />
-            <span>Student Profile</span>
+            <span>Profile</span>
           </button>
 
           <button
             onClick={() => onNavigate('dashboard')}
             id="nav-tab-dashboard"
-            className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 ${
               currentTab === 'dashboard'
                 ? 'bg-white text-indigo-600 shadow-xs'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
             }`}
           >
             <LayoutDashboard className="w-3.5 h-3.5" />
-            <span>AI Dashboard</span>
+            <span>Dashboard</span>
           </button>
 
           <button
             onClick={() => onNavigate('catalog')}
             id="nav-tab-catalog"
-            className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 ${
               currentTab === 'catalog'
                 ? 'bg-white text-indigo-600 shadow-xs'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
             }`}
           >
             <BookOpen className="w-3.5 h-3.5" />
-            <span>Course Catalog</span>
+            <span>Catalog</span>
           </button>
 
           <button
             onClick={() => onNavigate('profiles')}
             id="nav-tab-profiles"
-            className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 ${
               currentTab === 'profiles'
                 ? 'bg-white text-indigo-600 shadow-xs'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
             }`}
           >
             <Users className="w-3.5 h-3.5" />
-            <span>Sample Profiles</span>
+            <span>Profiles</span>
           </button>
 
           <button
             onClick={() => onNavigate('about')}
             id="nav-tab-about"
-            className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 ${
               currentTab === 'about'
                 ? 'bg-white text-indigo-600 shadow-xs'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
@@ -146,42 +146,61 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onNavigate }) => {
 
       </div>
 
-      {/* Mobile Bar */}
-      <div className="lg:hidden flex items-center justify-around bg-slate-50 px-2 py-2 border-t border-slate-200 text-[11px]">
+      {/* Mobile Only Bottom Navigation Bar (Hidden on Desktop, Laptop, and Tablet) */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-t border-slate-200/90 py-1.5 px-2 flex items-center justify-around shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
         <button
           onClick={() => onNavigate('landing')}
-          className={`flex flex-col items-center gap-0.5 ${currentTab === 'landing' ? 'text-indigo-600 font-bold' : 'text-slate-600'}`}
+          className={`flex flex-col items-center py-1 px-2 rounded-lg transition-colors text-[10px] ${
+            currentTab === 'landing' ? 'text-indigo-600 font-bold' : 'text-slate-500 hover:text-slate-800'
+          }`}
         >
-          <Compass className="w-4 h-4" />
+          <Compass className={`w-5 h-5 ${currentTab === 'landing' ? 'text-indigo-600' : 'text-slate-500'}`} />
           <span>Home</span>
         </button>
         <button
           onClick={() => onNavigate('wizard')}
-          className={`flex flex-col items-center gap-0.5 ${currentTab === 'wizard' ? 'text-indigo-600 font-bold' : 'text-slate-600'}`}
+          className={`flex flex-col items-center py-1 px-2 rounded-lg transition-colors text-[10px] ${
+            currentTab === 'wizard' ? 'text-indigo-600 font-bold' : 'text-slate-500 hover:text-slate-800'
+          }`}
         >
-          <UserPlus className="w-4 h-4" />
+          <UserPlus className={`w-5 h-5 ${currentTab === 'wizard' ? 'text-indigo-600' : 'text-slate-500'}`} />
           <span>Profile</span>
         </button>
         <button
           onClick={() => onNavigate('dashboard')}
-          className={`flex flex-col items-center gap-0.5 ${currentTab === 'dashboard' ? 'text-indigo-600 font-bold' : 'text-slate-600'}`}
+          className={`flex flex-col items-center py-1 px-2 rounded-lg transition-colors text-[10px] ${
+            currentTab === 'dashboard' ? 'text-indigo-600 font-bold' : 'text-slate-500 hover:text-slate-800'
+          }`}
         >
-          <LayoutDashboard className="w-4 h-4" />
+          <LayoutDashboard className={`w-5 h-5 ${currentTab === 'dashboard' ? 'text-indigo-600' : 'text-slate-500'}`} />
           <span>Dashboard</span>
         </button>
         <button
           onClick={() => onNavigate('catalog')}
-          className={`flex flex-col items-center gap-0.5 ${currentTab === 'catalog' ? 'text-indigo-600 font-bold' : 'text-slate-600'}`}
+          className={`flex flex-col items-center py-1 px-2 rounded-lg transition-colors text-[10px] ${
+            currentTab === 'catalog' ? 'text-indigo-600 font-bold' : 'text-slate-500 hover:text-slate-800'
+          }`}
         >
-          <BookOpen className="w-4 h-4" />
+          <BookOpen className={`w-5 h-5 ${currentTab === 'catalog' ? 'text-indigo-600' : 'text-slate-500'}`} />
           <span>Catalog</span>
         </button>
         <button
           onClick={() => onNavigate('profiles')}
-          className={`flex flex-col items-center gap-0.5 ${currentTab === 'profiles' ? 'text-indigo-600 font-bold' : 'text-slate-600'}`}
+          className={`flex flex-col items-center py-1 px-2 rounded-lg transition-colors text-[10px] ${
+            currentTab === 'profiles' ? 'text-indigo-600 font-bold' : 'text-slate-500 hover:text-slate-800'
+          }`}
         >
-          <Users className="w-4 h-4" />
+          <Users className={`w-5 h-5 ${currentTab === 'profiles' ? 'text-indigo-600' : 'text-slate-500'}`} />
           <span>Samples</span>
+        </button>
+        <button
+          onClick={() => onNavigate('about')}
+          className={`flex flex-col items-center py-1 px-2 rounded-lg transition-colors text-[10px] ${
+            currentTab === 'about' ? 'text-indigo-600 font-bold' : 'text-slate-500 hover:text-slate-800'
+          }`}
+        >
+          <Info className={`w-5 h-5 ${currentTab === 'about' ? 'text-indigo-600' : 'text-slate-500'}`} />
+          <span>About</span>
         </button>
       </div>
     </header>
