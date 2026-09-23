@@ -75,27 +75,27 @@ export const LandingPage: React.FC<LandingPageProps> = ({
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-indigo-500 selection:text-white">
       
       {/* --- HERO SECTION --- */}
-      <section className="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-28 border-b border-slate-200/60 bg-gradient-to-b from-indigo-50/50 via-slate-50 to-slate-50">
+      <section className="relative overflow-hidden pt-8 pb-16 sm:pt-12 sm:pb-20 md:pt-16 md:pb-24 lg:pt-20 lg:pb-28 border-b border-slate-200/60 bg-gradient-to-b from-indigo-50/50 via-slate-50 to-slate-50">
         
         {/* Subtle decorative glow spots */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-indigo-300/20 blur-[120px] rounded-full pointer-events-none"></div>
         <div className="absolute top-1/3 right-10 w-[300px] h-[250px] bg-cyan-300/20 blur-[100px] rounded-full pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             
             {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
               
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-indigo-200 shadow-xs text-xs font-semibold text-indigo-700">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-indigo-200 shadow-xs text-xs font-semibold text-indigo-700 mx-auto lg:mx-0">
                 <span className="flex h-2 w-2 rounded-full bg-indigo-600 animate-pulse"></span>
                 <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
                 <span>Next-Gen AI Learning Path Generator</span>
               </div>
 
               {/* Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight sm:leading-[1.15]">
                 Your Personalized <br className="hidden sm:inline" />
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500">
                   AI Learning Journey
@@ -103,12 +103,12 @@ export const LandingPage: React.FC<LandingPageProps> = ({
               </h1>
 
               {/* Subheadline */}
-              <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+              <p className="text-sm sm:text-base lg:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
                 Discover the perfect learning roadmap based on your current skills, academic background, and career goals. Let AI recommend what to learn next with clear explanations and prerequisite-aware planning.
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2 w-full sm:w-auto">
                 <button
                   onClick={() => onNavigate('wizard')}
                   id="hero-generate-btn"
@@ -130,17 +130,17 @@ export const LandingPage: React.FC<LandingPageProps> = ({
               </div>
 
               {/* Trust Indicators */}
-              <div className="pt-4 flex items-center justify-center lg:justify-start gap-6 text-xs text-slate-500 font-medium">
+              <div className="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 text-xs text-slate-500 font-medium">
                 <div className="flex items-center gap-1.5">
-                  <Check className="w-4 h-4 text-emerald-500" />
+                  <Check className="w-4 h-4 text-emerald-500 shrink-0" />
                   <span>No Registration Needed</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <Check className="w-4 h-4 text-emerald-500" />
+                  <Check className="w-4 h-4 text-emerald-500 shrink-0" />
                   <span>Prerequisite Resolved</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <Check className="w-4 h-4 text-emerald-500" />
+                  <Check className="w-4 h-4 text-emerald-500 shrink-0" />
                   <span>Powered by Gemini AI</span>
                 </div>
               </div>
@@ -148,71 +148,71 @@ export const LandingPage: React.FC<LandingPageProps> = ({
             </div>
 
             {/* Right Hero Graphic Card */}
-            <div className="lg:col-span-5">
-              <div className="relative mx-auto max-w-md lg:max-w-none">
+            <div className="lg:col-span-5 w-full flex justify-center">
+              <div className="relative w-full max-w-md lg:max-w-none">
                 
                 {/* Main Glassmorphic Card */}
-                <div className="p-6 rounded-2xl bg-white/80 backdrop-blur-xl border border-white/60 shadow-2xl shadow-indigo-900/10 space-y-5">
+                <div className="p-5 sm:p-6 rounded-2xl bg-white/85 backdrop-blur-xl border border-white/60 shadow-2xl shadow-indigo-900/10 space-y-4 sm:space-y-5">
                   
                   {/* Card Header */}
                   <div className="flex items-center justify-between border-b border-slate-100 pb-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-indigo-600 to-cyan-500 p-0.5">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-indigo-600 to-cyan-500 p-0.5 shrink-0">
                         <img 
                           src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" 
                           alt="Alex Rivera"
                           className="w-full h-full object-cover rounded-full"
                         />
                       </div>
-                      <div>
-                        <h4 className="text-sm font-bold text-slate-900">Alex Rivera</h4>
+                      <div className="text-left">
+                        <h4 className="text-sm font-bold text-slate-900 leading-tight">Alex Rivera</h4>
                         <p className="text-xs text-slate-500">CS Student • Goal: AI Engineer</p>
                       </div>
                     </div>
 
-                    <span className="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] font-bold text-emerald-700">
+                    <span className="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] font-bold text-emerald-700 shrink-0">
                       85% Ready
                     </span>
                   </div>
 
                   {/* Skills Chips */}
-                  <div>
+                  <div className="text-left">
                     <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block mb-1.5">Current Skills</span>
                     <div className="flex flex-wrap gap-1.5">
                       <span className="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-semibold text-slate-700">Python</span>
                       <span className="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-semibold text-slate-700">HTML</span>
                       <span className="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-semibold text-slate-700">CSS</span>
-                      <span className="px-2.5 py-1 rounded-md bg-amber-50 text-amber-700 border border-amber-200 text-xs font-semibold">+ Missing Statistics & DL</span>
+                      <span className="px-2.5 py-1 rounded-md bg-amber-50 text-amber-700 border border-amber-200 text-xs font-semibold">+ Missing Stats & DL</span>
                     </div>
                   </div>
 
                   {/* Roadmap Node Preview */}
-                  <div className="space-y-2 pt-1">
+                  <div className="space-y-2 pt-1 text-left">
                     <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">AI Generated Steps</div>
                     
                     <div className="space-y-2">
                       <div className="flex items-center gap-3 p-2.5 rounded-xl bg-indigo-50/80 border border-indigo-100 text-xs">
-                        <div className="w-6 h-6 rounded-full bg-indigo-600 text-white font-bold flex items-center justify-center text-[10px]">1</div>
-                        <div className="flex-1">
-                          <span className="font-bold text-slate-900 block">Statistics & Probability</span>
+                        <div className="w-6 h-6 rounded-full bg-indigo-600 text-white font-bold flex items-center justify-center text-[10px] shrink-0">1</div>
+                        <div className="flex-1 min-w-0">
+                          <span className="font-bold text-slate-900 block truncate">Statistics & Probability</span>
                           <span className="text-[10px] text-slate-500">2 Weeks • Prerequisite for ML</span>
                         </div>
-                        <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                        <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
                       </div>
 
                       <div className="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs">
-                        <div className="w-6 h-6 rounded-full bg-cyan-500 text-white font-bold flex items-center justify-center text-[10px]">2</div>
-                        <div className="flex-1">
-                          <span className="font-bold text-slate-900 block">Machine Learning Fundamentals</span>
+                        <div className="w-6 h-6 rounded-full bg-cyan-500 text-white font-bold flex items-center justify-center text-[10px] shrink-0">2</div>
+                        <div className="flex-1 min-w-0">
+                          <span className="font-bold text-slate-900 block truncate">Machine Learning Fundamentals</span>
                           <span className="text-[10px] text-slate-500">5 Weeks • Scikit-Learn</span>
                         </div>
-                        <Clock className="w-4 h-4 text-indigo-400" />
+                        <Clock className="w-4 h-4 text-indigo-400 shrink-0" />
                       </div>
 
                       <div className="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs">
-                        <div className="w-6 h-6 rounded-full bg-slate-300 text-slate-700 font-bold flex items-center justify-center text-[10px]">3</div>
-                        <div className="flex-1">
-                          <span className="font-bold text-slate-800 block">Deep Learning & PyTorch</span>
+                        <div className="w-6 h-6 rounded-full bg-slate-300 text-slate-700 font-bold flex items-center justify-center text-[10px] shrink-0">3</div>
+                        <div className="flex-1 min-w-0">
+                          <span className="font-bold text-slate-800 block truncate">Deep Learning & PyTorch</span>
                           <span className="text-[10px] text-slate-500">5 Weeks • Neural Networks</span>
                         </div>
                       </div>
@@ -220,23 +220,23 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                   </div>
 
                   {/* AI Explanation Banner */}
-                  <div className="p-3 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 text-white text-xs flex items-center gap-2 shadow-md">
-                    <Wand2 className="w-5 h-5 text-cyan-200 flex-shrink-0" />
+                  <div className="p-3 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 text-white text-xs flex items-center gap-2 shadow-md text-left">
+                    <Wand2 className="w-5 h-5 text-cyan-200 shrink-0" />
                     <p className="leading-tight text-[11px]">
-                      <strong className="font-semibold text-cyan-200">AI Rationale:</strong> "Placed Statistics before Machine Learning because probability concepts are critical for neural network loss functions."
+                      <strong className="font-semibold text-cyan-200">AI Rationale:</strong> "Placed Statistics before Machine Learning because probability concepts are critical for loss functions."
                     </p>
                   </div>
 
                 </div>
 
                 {/* Floating Decorative Badges */}
-                <div className="absolute -bottom-4 -left-4 bg-white p-3 rounded-xl border border-slate-200 shadow-lg flex items-center gap-2.5 text-xs font-bold text-slate-800 animate-bounce">
-                  <GraduationCap className="w-5 h-5 text-indigo-600" />
+                <div className="hidden sm:flex absolute -bottom-3 -left-3 bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200 shadow-lg items-center gap-2 text-xs font-bold text-slate-800">
+                  <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600 shrink-0" />
                   <span>Prerequisites Guaranteed</span>
                 </div>
 
-                <div className="absolute -top-4 -right-4 bg-white p-3 rounded-xl border border-slate-200 shadow-lg flex items-center gap-2 text-xs font-bold text-slate-800">
-                  <Brain className="w-5 h-5 text-cyan-500" />
+                <div className="hidden sm:flex absolute -top-3 -right-3 bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200 shadow-lg items-center gap-2 text-xs font-bold text-slate-800">
+                  <Brain className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-500 shrink-0" />
                   <span>Real-time Gemini AI</span>
                 </div>
 
