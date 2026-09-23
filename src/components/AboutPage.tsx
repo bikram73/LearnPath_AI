@@ -65,7 +65,7 @@ export const AboutPage: React.FC = () => {
 
             <div className="p-3 rounded-xl bg-indigo-600 text-white shadow-md">
               <span className="block text-[10px] text-cyan-200 font-bold">STEP 4</span>
-              <span>Gemini 3.6 Flash</span>
+              <span>Gemini AI Engine</span>
             </div>
 
           </div>
@@ -96,7 +96,7 @@ export const AboutPage: React.FC = () => {
             <div className="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
               <Brain className="w-6 h-6 text-emerald-600" />
               <h4 className="text-sm font-bold text-slate-900">AI Model</h4>
-              <p className="text-xs text-slate-500">Google Gemini 3.6 Flash via @google/genai SDK</p>
+              <p className="text-xs text-slate-500">Google Gemini AI via @google/genai SDK</p>
             </div>
 
             <div className="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">

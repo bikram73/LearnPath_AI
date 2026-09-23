@@ -363,7 +363,7 @@ export const RecommendationDashboard: React.FC<RecommendationDashboardProps> = (
                 <Brain className="w-5 h-5 text-cyan-400" />
                 <div>
                   <h4 className="text-sm font-bold">AI Learning Advisor</h4>
-                  <span className="text-[10px] text-cyan-300">Powered by Gemini 3.6 Flash</span>
+                  <span className="text-[10px] text-cyan-300">Powered by Gemini AI</span>
                 </div>
               </div>
 

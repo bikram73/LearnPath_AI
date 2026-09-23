@@ -28,7 +28,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </p>
             <div className="flex items-center gap-2 text-[11px] text-emerald-400 font-semibold">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-              <span>Gemini 3.6 Flash Active</span>
+              <span>Gemini AI Active</span>
             </div>
           </div>
 

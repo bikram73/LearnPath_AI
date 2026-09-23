@@ -141,7 +141,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Check className="w-4 h-4 text-emerald-500" />
-                  <span>Powered by Gemini 3.6</span>
+                  <span>Powered by Gemini AI</span>
                 </div>
               </div>
 
