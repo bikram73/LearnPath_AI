@@ -65,13 +65,13 @@ export const AboutPage: React.FC = () => {
 
             <div className="p-3 rounded-xl bg-indigo-600 text-white shadow-md">
               <span className="block text-[10px] text-cyan-200 font-bold">STEP 4</span>
-              <span>Gemini AI Engine</span>
+              <span>AI Recommendation Engine</span>
             </div>
 
           </div>
 
           <p className="text-xs text-slate-500 text-center max-w-xl mx-auto">
-            The agent verifies that prerequisite dependencies (e.g. Statistics before Machine Learning) are resolved first before passing candidate courses to Google Gemini AI for contextual rationale generation.
+            The agent verifies that prerequisite dependencies (e.g. Statistics before Machine Learning) are resolved first before passing candidate courses to the AI model for contextual rationale generation.
           </p>
         </div>
 
@@ -84,25 +84,25 @@ export const AboutPage: React.FC = () => {
             <div className="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
               <Layout className="w-6 h-6 text-indigo-600" />
               <h4 className="text-sm font-bold text-slate-900">Frontend</h4>
-              <p className="text-xs text-slate-500">React 19 + TypeScript + Tailwind CSS + Framer Motion</p>
+              <p className="text-xs text-slate-500">React 19 + TypeScript + Tailwind CSS</p>
             </div>
 
             <div className="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
               <Server className="w-6 h-6 text-cyan-600" />
               <h4 className="text-sm font-bold text-slate-900">Backend API</h4>
-              <p className="text-xs text-slate-500">FastAPI / Express with Pydantic JSON schema validation</p>
+              <p className="text-xs text-slate-500">Express + TypeScript REST endpoints</p>
             </div>
 
             <div className="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
               <Brain className="w-6 h-6 text-emerald-600" />
-              <h4 className="text-sm font-bold text-slate-900">AI Model</h4>
-              <p className="text-xs text-slate-500">Google Gemini AI via @google/genai SDK</p>
+              <h4 className="text-sm font-bold text-slate-900">AI Intelligence</h4>
+              <p className="text-xs text-slate-500">Generative AI Reasoning & Knowledge Graph Engine</p>
             </div>
 
             <div className="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
               <Sparkles className="w-6 h-6 text-purple-600" />
               <h4 className="text-sm font-bold text-slate-900">Design System</h4>
-              <p className="text-xs text-slate-500">Google Stitch UI Guidelines & Modern AI Education Theme</p>
+              <p className="text-xs text-slate-500">Clean Educational UI & Modern Design Theme</p>
             </div>
 
           </div>
@@ -115,7 +115,7 @@ export const AboutPage: React.FC = () => {
             <h4 className="text-sm font-bold">Privacy-First Architecture</h4>
           </div>
           <p className="text-xs text-slate-300 leading-relaxed">
-            This project intentionally excludes traditional databases and user authentication tracking. All recommendations are computed dynamically in real-time based on local course catalog JSON files and Gemini AI prompts. Your profile data never leaves your session.
+            This project intentionally excludes traditional databases and user authentication tracking. All recommendations are computed dynamically in real-time based on local course catalog JSON files and intelligent AI prompts. Your profile data never leaves your session.
           </p>
         </div>
 

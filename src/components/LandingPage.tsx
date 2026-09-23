@@ -51,7 +51,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
   const faqs = [
     {
       q: "How does the AI Course Recommendation Agent work?",
-      a: "The agent analyzes your academic background, current skills, weekly study time, and target career goal. It compares your profile against our course catalog, resolves prerequisite dependencies, and uses Google Gemini AI to construct an ordered, step-by-step roadmap with clear explanations for every step."
+      a: "The agent analyzes your academic background, current skills, weekly study time, and target career goal. It compares your profile against our course catalog, resolves prerequisite dependencies, and uses AI to construct an ordered, step-by-step roadmap with clear explanations for every step."
     },
     {
       q: "Are prerequisites automatically taken into account?",
@@ -141,7 +141,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Check className="w-4 h-4 text-emerald-500 shrink-0" />
-                  <span>Powered by Gemini AI</span>
+                  <span>Real-time AI Guidance</span>
                 </div>
               </div>
 
@@ -237,7 +237,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
 
                 <div className="hidden sm:flex absolute -top-3 -right-3 bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200 shadow-lg items-center gap-2 text-xs font-bold text-slate-800">
                   <Brain className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-500 shrink-0" />
-                  <span>Real-time Gemini AI</span>
+                  <span>Real-time AI Guidance</span>
                 </div>
 
               </div>

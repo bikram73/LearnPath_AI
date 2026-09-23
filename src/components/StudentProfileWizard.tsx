@@ -97,7 +97,7 @@ export const StudentProfileWizard: React.FC<StudentProfileWizardProps> = ({
     await new Promise(r => setTimeout(r, 600));
     setLoadingStepText("3. Resolving prerequisite dependency order...");
     await new Promise(r => setTimeout(r, 600));
-    setLoadingStepText("4. Gemini AI refining course rationales & benefits...");
+    setLoadingStepText("4. AI Engine refining course rationales & benefits...");
 
     try {
       const response = await fetch("/api/recommend", {
@@ -500,7 +500,7 @@ export const StudentProfileWizard: React.FC<StudentProfileWizardProps> = ({
               </div>
 
               <div className="space-y-2">
-                <h3 className="text-lg font-bold text-slate-900">Gemini AI Engine At Work</h3>
+                <h3 className="text-lg font-bold text-slate-900">AI Recommendation Engine</h3>
                 <p className="text-xs text-indigo-600 font-semibold">{loadingStepText}</p>
               </div>
 

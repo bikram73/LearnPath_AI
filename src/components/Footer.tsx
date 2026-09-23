@@ -20,16 +20,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               <span className="text-lg font-bold tracking-tight text-white">
-                Course Recommendation Agent
+                LearnPath AI
               </span>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Empowering students and self-learners with personalized, prerequisite-aware learning paths powered by Google Gemini AI.
+              Empowering students and self-learners with personalized, prerequisite-aware learning paths.
             </p>
-            <div className="flex items-center gap-2 text-[11px] text-emerald-400 font-semibold">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-              <span>Gemini AI Active</span>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -83,7 +79,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                Gemini AI Rationale Generator
+                Intelligent Rationale Generator
               </li>
               <li className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />

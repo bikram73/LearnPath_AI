@@ -41,7 +41,7 @@ export const RecommendationDashboard: React.FC<RecommendationDashboardProps> = (
   const [chatMessages, setChatMessages] = useState<Array<{ sender: 'user' | 'assistant'; text: string }>>([
     {
       sender: 'assistant',
-      text: `Hello ${result.studentProfile.name || 'Learner'}! I'm your Gemini AI Learning Advisor. Ask me any questions about your ${result.goal} roadmap or study strategy!`
+      text: `Hello ${result.studentProfile.name || 'Learner'}! I'm your AI Learning Advisor. Ask me any questions about your ${result.goal} roadmap or study strategy!`
     }
   ]);
   const [chatLoading, setChatLoading] = useState<boolean>(false);
@@ -363,7 +363,7 @@ export const RecommendationDashboard: React.FC<RecommendationDashboardProps> = (
                 <Brain className="w-5 h-5 text-cyan-400" />
                 <div>
                   <h4 className="text-sm font-bold">AI Learning Advisor</h4>
-                  <span className="text-[10px] text-cyan-300">Powered by Gemini AI</span>
+                  <span className="text-[10px] text-cyan-300">Interactive Roadmap Assistant</span>
                 </div>
               </div>
 
@@ -396,7 +396,7 @@ export const RecommendationDashboard: React.FC<RecommendationDashboardProps> = (
                 <div className="flex justify-start">
                   <div className="p-3 rounded-2xl bg-white text-slate-500 text-xs border border-slate-200 flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-indigo-600 animate-spin" />
-                    <span>Gemini AI is thinking...</span>
+                    <span>AI Advisor is thinking...</span>
                   </div>
                 </div>
               )}
