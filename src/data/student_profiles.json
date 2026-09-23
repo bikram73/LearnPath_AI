@@ -1,0 +1,58 @@
+[
+  {
+    "id": "profile-1",
+    "name": "Alex Rivera",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+    "background": "Computer Science Student",
+    "skills": ["Python", "HTML", "CSS"],
+    "goal": "AI Engineer",
+    "experienceLevel": "Beginner",
+    "weeklyHours": 10,
+    "learningStyle": "Hands-on Projects",
+    "description": "2nd year CS major with foundational Python programming knowledge aiming to build Generative AI and ML models.",
+    "badge": "Profile 1 - CS Major",
+    "sampleRoadmapPreview": ["Statistics & Probability", "NumPy & Pandas", "Machine Learning", "Deep Learning & PyTorch", "Generative AI Agents"]
+  },
+  {
+    "id": "profile-2",
+    "name": "Priya Sharma",
+    "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
+    "background": "Commerce & Business Graduate",
+    "skills": ["Excel", "Basic Math"],
+    "goal": "Data Analyst",
+    "experienceLevel": "Beginner",
+    "weeklyHours": 12,
+    "learningStyle": "Visual & Interactive",
+    "description": "Business graduate with strong spreadsheet skills transitioning into data analytics, business intelligence, and SQL querying.",
+    "badge": "Profile 2 - Commerce",
+    "sampleRoadmapPreview": ["Advanced Excel", "SQL & Relational DBs", "Python Basics", "Pandas Data Analysis", "Power BI Dashboards"]
+  },
+  {
+    "id": "profile-3",
+    "name": "Marcus Vance",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+    "background": "Mechanical Engineering Student",
+    "skills": ["C Programming", "Matlab"],
+    "goal": "Software Developer",
+    "experienceLevel": "Beginner",
+    "weeklyHours": 15,
+    "learningStyle": "Structured & Theoretical",
+    "description": "Mechanical engineer switching into software development with logic-building C programming background.",
+    "badge": "Profile 3 - Engineering Switcher",
+    "sampleRoadmapPreview": ["Python Basics", "Git & GitHub", "Object-Oriented Programming", "Data Structures & Algorithms", "FastAPI Backend"]
+  },
+  {
+    "id": "profile-4",
+    "name": "Elena Rostova",
+    "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
+    "background": "Arts & Design Graduate",
+    "skills": ["Graphic Design", "Figma"],
+    "goal": "Frontend Developer",
+    "experienceLevel": "Beginner",
+    "weeklyHours": 8,
+    "learningStyle": "Visual & Interactive",
+    "description": "UI designer with non-technical background building web applications with HTML, CSS, JavaScript, React, and TypeScript.",
+    "badge": "Profile 4 - Non-Tech Switcher",
+    "sampleRoadmapPreview": ["HTML5 & CSS3 Web Fundamentals", "JavaScript ES6+", "React 19 & Web Apps", "TypeScript", "Capstone Portfolio"]
+  }
+]

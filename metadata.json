@@ -1,0 +1,6 @@
+{
+  "name": "Course Recommendation Agent",
+  "description": "Personalized AI Learning Advisor that generates prerequisite-aware learning roadmaps, skill gap analysis, and course recommendations using Gemini AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

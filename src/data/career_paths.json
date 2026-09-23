@@ -1,0 +1,32 @@
+[
+  {
+    "goal": "AI Engineer",
+    "description": "Design, build, and deploy machine learning models, neural networks, and Generative AI agents.",
+    "requiredSkills": ["Python", "Statistics", "NumPy", "Pandas", "Machine Learning", "Deep Learning", "TensorFlow", "Generative AI", "SQL", "Git"],
+    "recommendedCourseIds": ["py-101", "stat-101", "numpy-101", "pandas-101", "ml-201", "dl-301", "tf-302", "genai-401", "sql-101", "git-101", "proj-301"]
+  },
+  {
+    "goal": "Data Analyst",
+    "description": "Transform data into actionable business insights with SQL, Python, Excel, and Power BI.",
+    "requiredSkills": ["Excel", "SQL", "Statistics", "Python", "Pandas", "Power BI", "Data Visualization"],
+    "recommendedCourseIds": ["excel-101", "sql-101", "stat-101", "py-101", "pandas-101", "powerbi-101", "proj-301"]
+  },
+  {
+    "goal": "Software Developer",
+    "description": "Build robust, scalable software applications with data structures, OOP, Git, and backend frameworks.",
+    "requiredSkills": ["Python", "Git", "OOP", "Data Structures", "Algorithms", "SQL", "FastAPI"],
+    "recommendedCourseIds": ["py-101", "git-101", "oop-101", "dsa-101", "sql-101", "fastapi-201", "proj-301"]
+  },
+  {
+    "goal": "Frontend Developer",
+    "description": "Create responsive, accessible, interactive web user interfaces using HTML, CSS, JavaScript, React, and TypeScript.",
+    "requiredSkills": ["HTML", "CSS", "JavaScript", "React", "TypeScript", "Git"],
+    "recommendedCourseIds": ["web-101", "js-101", "react-201", "ts-202", "git-101", "proj-301"]
+  },
+  {
+    "goal": "Backend Developer",
+    "description": "Build high-throughput APIs, database schemas, microservices, and server-side applications.",
+    "requiredSkills": ["Python", "SQL", "FastAPI", "Data Structures", "Git", "OOP"],
+    "recommendedCourseIds": ["py-101", "sql-101", "oop-101", "dsa-101", "fastapi-201", "git-101", "proj-301"]
+  }
+]
