@@ -32,15 +32,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onNavigate }) => {
             <Sparkles className="w-5 h-5 animate-pulse" />
           </div>
           <div className="flex flex-col justify-center">
-            <div className="flex items-center gap-1.5">
-              <span className="text-base sm:text-lg font-extrabold tracking-tight text-slate-900 font-sans leading-none">
-                LearnPath AI
-              </span>
-              <span className="px-1.5 py-0.5 text-[9px] sm:text-[10px] font-bold bg-indigo-50 text-indigo-700 rounded-md border border-indigo-200 leading-none">
-                v1.0 AI
-              </span>
-            </div>
-            <span className="block text-[10px] sm:text-[11px] font-medium text-slate-500 mt-0.5 leading-tight">
+            <span className="text-base sm:text-lg font-extrabold tracking-tight text-slate-900 font-sans leading-none">
+              LearnPath AI
+            </span>
+            <span className="block text-[10px] sm:text-[11px] font-medium text-slate-500 mt-1 leading-tight">
               Prerequisite-Aware Learning Advisor
             </span>
           </div>
