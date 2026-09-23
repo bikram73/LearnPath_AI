@@ -12,9 +12,14 @@ import {
 interface MobileBottomNavProps {
   currentTab: NavigationTab;
   onNavigate: (tab: NavigationTab) => void;
+  onOpenProfileModal?: () => void;
 }
 
-export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentTab, onNavigate }) => {
+export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ 
+  currentTab, 
+  onNavigate,
+  onOpenProfileModal
+}) => {
   return (
     <nav 
       id="mobile-bottom-nav"
@@ -38,7 +43,12 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentTab, on
       </button>
 
       <button
-        onClick={() => onNavigate('wizard')}
+        onClick={() => {
+          if (onOpenProfileModal) {
+            onOpenProfileModal();
+          }
+          onNavigate('wizard');
+        }}
         className="flex flex-col items-center justify-center flex-1 py-1 transition-all cursor-pointer group select-none"
       >
         <div className={`w-10 h-8 rounded-2xl flex items-center justify-center transition-all ${

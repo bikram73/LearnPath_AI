@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   StudentProfile, 
   ExperienceLevel, 
@@ -21,15 +21,20 @@ import {
   Zap,
   BookOpen,
   CheckCircle2,
-  Brain
+  Brain,
+  HardDrive,
+  Edit3,
+  Save
 } from 'lucide-react';
 
 import { processRecommendation } from '../lib/recommendationEngine';
+import { UserProfileModal, StoredUserProfile } from './UserProfileModal';
 
 interface StudentProfileWizardProps {
   onGenerateSuccess: (result: RecommendationResult) => void;
   sampleProfiles: SampleProfile[];
   initialProfile?: StudentProfile;
+  onProfileSaved?: (profile: StoredUserProfile) => void;
 }
 
 const COMMON_SKILLS = [
@@ -49,11 +54,15 @@ const CAREER_GOALS = [
 export const StudentProfileWizard: React.FC<StudentProfileWizardProps> = ({ 
   onGenerateSuccess, 
   sampleProfiles,
-  initialProfile 
+  initialProfile,
+  onProfileSaved
 }) => {
   const [step, setStep] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
   const [loadingStepText, setLoadingStepText] = useState<string>("Analyzing student profile...");
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState<boolean>(false);
+  const [hasLocalStorageProfile, setHasLocalStorageProfile] = useState<boolean>(false);
+  const [showSavedFeedback, setShowSavedFeedback] = useState<boolean>(false);
 
   // Form State
   const [name, setName] = useState<string>(initialProfile?.name || "Alex Rivera");
@@ -64,6 +73,48 @@ export const StudentProfileWizard: React.FC<StudentProfileWizardProps> = ({
   const [experienceLevel, setExperienceLevel] = useState<ExperienceLevel>(initialProfile?.experienceLevel || "Beginner");
   const [weeklyHours, setWeeklyHours] = useState<number>(initialProfile?.weeklyHours || 10);
   const [learningStyle, setLearningStyle] = useState<LearningStyle>(initialProfile?.learningStyle || "Hands-on Projects");
+
+  // Load from LocalStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem('learnpath_user_profile');
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        if (parsed.name) setName(parsed.name);
+        if (parsed.education) setBackground(parsed.education);
+        if (parsed.goal) setGoal(parsed.goal);
+        setHasLocalStorageProfile(true);
+      } catch (e) {
+        console.error("Failed to parse localStorage profile", e);
+      }
+    }
+  }, []);
+
+  const saveCurrentToLocalStorage = () => {
+    const profileData: StoredUserProfile = {
+      name: name.trim() || 'Alex Rivera',
+      education: background.trim() || 'Computer Science Student',
+      goal,
+      updatedAt: new Date().toISOString()
+    };
+    localStorage.setItem('learnpath_user_profile', JSON.stringify(profileData));
+    setHasLocalStorageProfile(true);
+    setShowSavedFeedback(true);
+    if (onProfileSaved) {
+      onProfileSaved(profileData);
+    }
+    setTimeout(() => setShowSavedFeedback(false), 3000);
+  };
+
+  const handleModalSave = (profile: StoredUserProfile) => {
+    setName(profile.name);
+    setBackground(profile.education);
+    if (profile.goal) setGoal(profile.goal);
+    setHasLocalStorageProfile(true);
+    if (onProfileSaved) {
+      onProfileSaved(profile);
+    }
+  };
 
   const handleAddSkill = (skillToAdd: string) => {
     const trimmed = skillToAdd.trim();
@@ -85,9 +136,22 @@ export const StudentProfileWizard: React.FC<StudentProfileWizardProps> = ({
     setExperienceLevel(sample.experienceLevel);
     setWeeklyHours(sample.weeklyHours);
     setLearningStyle(sample.learningStyle);
+
+    // Save sample to LocalStorage
+    const profileData: StoredUserProfile = {
+      name: sample.name,
+      education: sample.background,
+      goal: sample.goal,
+      updatedAt: new Date().toISOString()
+    };
+    localStorage.setItem('learnpath_user_profile', JSON.stringify(profileData));
+    setHasLocalStorageProfile(true);
+    if (onProfileSaved) onProfileSaved(profileData);
   };
 
   const handleSubmit = async () => {
+    // Persist to LocalStorage on generate
+    saveCurrentToLocalStorage();
     setLoading(true);
     
     // Animated progress status
@@ -178,6 +242,50 @@ export const StudentProfileWizard: React.FC<StudentProfileWizardProps> = ({
             ))}
           </div>
         </div>
+
+        {/* LocalStorage Saved Status Card */}
+        <div className="p-4 rounded-2xl bg-gradient-to-r from-slate-900 to-indigo-950 text-white shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-cyan-300">
+              <HardDrive className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold tracking-tight">Active Browser Profile (LocalStorage):</span>
+                <span className="px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 text-[10px] font-bold border border-emerald-500/30">
+                  {hasLocalStorageProfile ? 'Synced' : 'Default'}
+                </span>
+              </div>
+              <p className="text-xs text-slate-300 mt-0.5">
+                <b className="text-white">{name}</b> • {background} ({goal})
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 w-full sm:w-auto">
+            <button
+              onClick={() => setIsProfileModalOpen(true)}
+              className="px-3 py-1.5 rounded-xl bg-white/15 hover:bg-white/25 text-white text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer"
+            >
+              <Edit3 className="w-3.5 h-3.5 text-cyan-300" />
+              <span>Edit Details</span>
+            </button>
+            <button
+              onClick={saveCurrentToLocalStorage}
+              className="px-3.5 py-1.5 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shadow-xs"
+            >
+              <Save className="w-3.5 h-3.5" />
+              <span>Save Changes</span>
+            </button>
+          </div>
+        </div>
+
+        {showSavedFeedback && (
+          <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold flex items-center gap-2 animate-fadeIn">
+            <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+            <span>Profile name and education background successfully saved to LocalStorage!</span>
+          </div>
+        )}
 
         {/* Multi-step Wizard Container */}
         <div className="p-6 md:p-8 rounded-2xl bg-white border border-slate-200 shadow-xl space-y-8">
@@ -515,6 +623,18 @@ export const StudentProfileWizard: React.FC<StudentProfileWizardProps> = ({
             </div>
           </div>
         )}
+
+        {/* User Profile LocalStorage Modal */}
+        <UserProfileModal
+          isOpen={isProfileModalOpen}
+          onClose={() => setIsProfileModalOpen(false)}
+          onSave={handleModalSave}
+          currentProfile={{
+            name,
+            education: background,
+            goal
+          }}
+        />
 
       </div>
     </div>

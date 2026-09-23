@@ -15,6 +15,7 @@ import { SampleProfiles } from './components/SampleProfiles';
 import { AboutPage } from './components/AboutPage';
 import { Footer } from './components/Footer';
 import { MobileBottomNav } from './components/MobileBottomNav';
+import { UserProfileModal, StoredUserProfile } from './components/UserProfileModal';
 
 import { 
   getCoursesList, 
@@ -40,21 +41,21 @@ const DEFAULT_SAMPLE_PROFILES: SampleProfile[] = [
   },
   {
     id: "profile-2",
-    name: "Priya Sharma",
+    name: "Priya Patel",
     avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
     background: "Commerce & Business Graduate",
-    skills: ["Excel", "Basic Math"],
+    skills: ["Excel", "Basic Business Analysis"],
     goal: "Data Analyst",
     experienceLevel: "Beginner",
     weeklyHours: 12,
-    learningStyle: "Visual & Interactive",
-    description: "Business graduate transitioning into data analytics and SQL querying.",
-    badge: "Profile 2 - Commerce",
-    sampleRoadmapPreview: ["Advanced Excel", "SQL & Relational DBs", "Python Basics", "Pandas Data Analysis", "Power BI Dashboards"]
+    learningStyle: "Hands-on Projects",
+    description: "Business graduate aiming to become a data analyst with SQL, Power BI, and Python skills.",
+    badge: "Profile 2 - Career Switcher",
+    sampleRoadmapPreview: ["Data Analytics Fundamentals", "SQL for Data Science", "Python for Data Analysis", "Power BI & Tableau Dashboards", "Applied Capstone"]
   },
   {
     id: "profile-3",
-    name: "Marcus Vance",
+    name: "Marcus Chen",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
     background: "Mechanical Engineering Student",
     skills: ["C Programming", "Matlab"],
@@ -87,9 +88,25 @@ export default function App() {
   const [sampleProfiles, setSampleProfiles] = useState<SampleProfile[]>(DEFAULT_SAMPLE_PROFILES);
   const [courses, setCourses] = useState<Course[]>(getCoursesList());
   const [recommendationResult, setRecommendationResult] = useState<RecommendationResult | null>(null);
+  
+  // User LocalStorage Profile State
+  const [userProfile, setUserProfile] = useState<StoredUserProfile | null>(null);
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState<boolean>(false);
 
-  // Load datasets on mount
+  // Load datasets and localStorage profile on mount
   useEffect(() => {
+    // 1. Check LocalStorage for saved user profile
+    const stored = localStorage.getItem('learnpath_user_profile');
+    if (stored) {
+      try {
+        const parsed: StoredUserProfile = JSON.parse(stored);
+        setUserProfile(parsed);
+      } catch (e) {
+        console.error("Error reading initial user profile", e);
+      }
+    }
+
+    // 2. Fetch seed profiles & courses
     fetch("/api/profiles")
       .then(res => res.json())
       .then(data => { 
@@ -108,12 +125,16 @@ export default function App() {
         setCourses(getCoursesList());
       });
 
-    // Auto-generate default initial recommendation for Alex Rivera
+    // Auto-generate initial default recommendation using stored profile or Alex Rivera
+    const initialName = stored ? (JSON.parse(stored).name || "Alex Rivera") : "Alex Rivera";
+    const initialBackground = stored ? (JSON.parse(stored).education || "Computer Science Student") : "Computer Science Student";
+    const initialGoal = stored ? (JSON.parse(stored).goal || "AI Engineer") : "AI Engineer";
+
     handleGenerateRecommendation({
-      name: "Alex Rivera",
-      background: "Computer Science Student",
+      name: initialName,
+      background: initialBackground,
       skills: ["Python", "HTML", "CSS"],
-      goal: "AI Engineer",
+      goal: initialGoal,
       experienceLevel: "Beginner",
       weeklyHours: 10,
       learningStyle: "Hands-on Projects"
@@ -123,6 +144,14 @@ export default function App() {
   const handleNavigate = (tab: NavigationTab) => {
     setCurrentTab(tab);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleOpenProfileModal = () => {
+    setIsProfileModalOpen(true);
+  };
+
+  const handleProfileSaved = (profile: StoredUserProfile) => {
+    setUserProfile(profile);
   };
 
   const handleGenerateRecommendation = async (profile: StudentProfile, navigateToDash: boolean = true) => {
@@ -140,7 +169,7 @@ export default function App() {
         throw new Error("API not ok, falling back to local calculation");
       }
     } catch (err) {
-      // Local client fallback for static deployment on Netlify
+      // Local client fallback for static deployment
       const result = await processRecommendation(profile);
       setRecommendationResult(result);
     } finally {
@@ -149,7 +178,6 @@ export default function App() {
       }
     }
   };
-
 
   const handleSelectSample = (sample: SampleProfile) => {
     handleGenerateRecommendation({
@@ -167,7 +195,12 @@ export default function App() {
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-indigo-500 selection:text-white">
       
       {/* Top Navbar */}
-      <Navbar currentTab={currentTab} onNavigate={handleNavigate} />
+      <Navbar 
+        currentTab={currentTab} 
+        onNavigate={handleNavigate}
+        userProfile={userProfile}
+        onOpenProfileModal={handleOpenProfileModal}
+      />
 
       {/* Main View Container */}
       <main className="flex-1 pb-20 md:pb-0">
@@ -182,6 +215,7 @@ export default function App() {
         {currentTab === 'wizard' && (
           <StudentProfileWizard 
             sampleProfiles={sampleProfiles}
+            onProfileSaved={handleProfileSaved}
             onGenerateSuccess={(res) => {
               setRecommendationResult(res);
               handleNavigate('dashboard');
@@ -229,7 +263,19 @@ export default function App() {
       <Footer onNavigate={handleNavigate} />
 
       {/* Mobile Fixed Bottom Navigation Bar */}
-      <MobileBottomNav currentTab={currentTab} onNavigate={handleNavigate} />
+      <MobileBottomNav 
+        currentTab={currentTab} 
+        onNavigate={handleNavigate}
+        onOpenProfileModal={handleOpenProfileModal}
+      />
+
+      {/* Global Profile Modal (triggered on Profile click) */}
+      <UserProfileModal
+        isOpen={isProfileModalOpen}
+        onClose={() => setIsProfileModalOpen(false)}
+        onSave={handleProfileSaved}
+        currentProfile={userProfile}
+      />
 
     </div>
   );
