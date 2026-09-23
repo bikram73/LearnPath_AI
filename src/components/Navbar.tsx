@@ -20,28 +20,28 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ currentTab, onNavigate }) => {
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         
         {/* Brand Logo */}
         <div 
           onClick={() => onNavigate('landing')} 
-          className="flex items-center gap-3 cursor-pointer group"
+          className="flex items-center gap-2.5 sm:gap-3 cursor-pointer group shrink-0"
           id="navbar-brand-logo"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 via-indigo-500 to-cyan-500 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-indigo-600 via-indigo-500 to-cyan-500 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform shrink-0">
             <Sparkles className="w-5 h-5 animate-pulse" />
           </div>
-          <div>
+          <div className="flex flex-col justify-center">
             <div className="flex items-center gap-1.5">
-              <span className="text-lg font-bold tracking-tight text-slate-900 font-sans">
-                Course Recommendation Agent
+              <span className="text-base sm:text-lg font-extrabold tracking-tight text-slate-900 font-sans leading-none">
+                LearnPath AI
               </span>
-              <span className="px-1.5 py-0.5 text-[10px] font-semibold bg-indigo-50 text-indigo-700 rounded-md border border-indigo-200">
+              <span className="px-1.5 py-0.5 text-[9px] sm:text-[10px] font-bold bg-indigo-50 text-indigo-700 rounded-md border border-indigo-200 leading-none">
                 v1.0 AI
               </span>
             </div>
-            <span className="block text-[11px] font-medium text-slate-500 -mt-0.5">
-              Prerequisite-Aware AI Learning Advisor
+            <span className="block text-[10px] sm:text-[11px] font-medium text-slate-500 mt-0.5 leading-tight">
+              Prerequisite-Aware Learning Advisor
             </span>
           </div>
         </div>
