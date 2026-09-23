@@ -146,61 +146,90 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onNavigate }) => {
 
       </div>
 
-      {/* Mobile Only Bottom Navigation Bar (Hidden on Desktop, Laptop, and Tablet) */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-t border-slate-200/90 py-1.5 px-2 flex items-center justify-around shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+      {/* Mobile Bottom Navigation Bar (Visible only on mobile devices) */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-t border-slate-200/90 py-2 px-2 flex items-center justify-around shadow-[0_-4px_25px_rgba(0,0,0,0.08)]">
         <button
           onClick={() => onNavigate('landing')}
-          className={`flex flex-col items-center py-1 px-2 rounded-lg transition-colors text-[10px] ${
-            currentTab === 'landing' ? 'text-indigo-600 font-bold' : 'text-slate-500 hover:text-slate-800'
+          className={`flex flex-col items-center justify-center py-1 px-2.5 rounded-xl transition-all cursor-pointer ${
+            currentTab === 'landing'
+              ? 'text-indigo-600 font-bold scale-105'
+              : 'text-slate-500 hover:text-slate-900 active:scale-95'
           }`}
         >
-          <Compass className={`w-5 h-5 ${currentTab === 'landing' ? 'text-indigo-600' : 'text-slate-500'}`} />
-          <span>Home</span>
+          <div className={`p-1 rounded-lg ${currentTab === 'landing' ? 'bg-indigo-50 text-indigo-600' : 'text-slate-500'}`}>
+            <Compass className="w-5 h-5" />
+          </div>
+          <span className="text-[10px] tracking-tight mt-0.5">Home</span>
         </button>
+
         <button
           onClick={() => onNavigate('wizard')}
-          className={`flex flex-col items-center py-1 px-2 rounded-lg transition-colors text-[10px] ${
-            currentTab === 'wizard' ? 'text-indigo-600 font-bold' : 'text-slate-500 hover:text-slate-800'
+          className={`flex flex-col items-center justify-center py-1 px-2.5 rounded-xl transition-all cursor-pointer ${
+            currentTab === 'wizard'
+              ? 'text-indigo-600 font-bold scale-105'
+              : 'text-slate-500 hover:text-slate-900 active:scale-95'
           }`}
         >
-          <UserPlus className={`w-5 h-5 ${currentTab === 'wizard' ? 'text-indigo-600' : 'text-slate-500'}`} />
-          <span>Profile</span>
+          <div className={`p-1 rounded-lg ${currentTab === 'wizard' ? 'bg-indigo-50 text-indigo-600' : 'text-slate-500'}`}>
+            <UserPlus className="w-5 h-5" />
+          </div>
+          <span className="text-[10px] tracking-tight mt-0.5">Profile</span>
         </button>
+
         <button
           onClick={() => onNavigate('dashboard')}
-          className={`flex flex-col items-center py-1 px-2 rounded-lg transition-colors text-[10px] ${
-            currentTab === 'dashboard' ? 'text-indigo-600 font-bold' : 'text-slate-500 hover:text-slate-800'
+          className={`flex flex-col items-center justify-center py-1 px-2.5 rounded-xl transition-all cursor-pointer ${
+            currentTab === 'dashboard'
+              ? 'text-indigo-600 font-bold scale-105'
+              : 'text-slate-500 hover:text-slate-900 active:scale-95'
           }`}
         >
-          <LayoutDashboard className={`w-5 h-5 ${currentTab === 'dashboard' ? 'text-indigo-600' : 'text-slate-500'}`} />
-          <span>Dashboard</span>
+          <div className={`p-1 rounded-lg ${currentTab === 'dashboard' ? 'bg-indigo-50 text-indigo-600' : 'text-slate-500'}`}>
+            <LayoutDashboard className="w-5 h-5" />
+          </div>
+          <span className="text-[10px] tracking-tight mt-0.5">Dashboard</span>
         </button>
+
         <button
           onClick={() => onNavigate('catalog')}
-          className={`flex flex-col items-center py-1 px-2 rounded-lg transition-colors text-[10px] ${
-            currentTab === 'catalog' ? 'text-indigo-600 font-bold' : 'text-slate-500 hover:text-slate-800'
+          className={`flex flex-col items-center justify-center py-1 px-2.5 rounded-xl transition-all cursor-pointer ${
+            currentTab === 'catalog'
+              ? 'text-indigo-600 font-bold scale-105'
+              : 'text-slate-500 hover:text-slate-900 active:scale-95'
           }`}
         >
-          <BookOpen className={`w-5 h-5 ${currentTab === 'catalog' ? 'text-indigo-600' : 'text-slate-500'}`} />
-          <span>Catalog</span>
+          <div className={`p-1 rounded-lg ${currentTab === 'catalog' ? 'bg-indigo-50 text-indigo-600' : 'text-slate-500'}`}>
+            <BookOpen className="w-5 h-5" />
+          </div>
+          <span className="text-[10px] tracking-tight mt-0.5">Catalog</span>
         </button>
+
         <button
           onClick={() => onNavigate('profiles')}
-          className={`flex flex-col items-center py-1 px-2 rounded-lg transition-colors text-[10px] ${
-            currentTab === 'profiles' ? 'text-indigo-600 font-bold' : 'text-slate-500 hover:text-slate-800'
+          className={`flex flex-col items-center justify-center py-1 px-2.5 rounded-xl transition-all cursor-pointer ${
+            currentTab === 'profiles'
+              ? 'text-indigo-600 font-bold scale-105'
+              : 'text-slate-500 hover:text-slate-900 active:scale-95'
           }`}
         >
-          <Users className={`w-5 h-5 ${currentTab === 'profiles' ? 'text-indigo-600' : 'text-slate-500'}`} />
-          <span>Samples</span>
+          <div className={`p-1 rounded-lg ${currentTab === 'profiles' ? 'bg-indigo-50 text-indigo-600' : 'text-slate-500'}`}>
+            <Users className="w-5 h-5" />
+          </div>
+          <span className="text-[10px] tracking-tight mt-0.5">Samples</span>
         </button>
+
         <button
           onClick={() => onNavigate('about')}
-          className={`flex flex-col items-center py-1 px-2 rounded-lg transition-colors text-[10px] ${
-            currentTab === 'about' ? 'text-indigo-600 font-bold' : 'text-slate-500 hover:text-slate-800'
+          className={`flex flex-col items-center justify-center py-1 px-2.5 rounded-xl transition-all cursor-pointer ${
+            currentTab === 'about'
+              ? 'text-indigo-600 font-bold scale-105'
+              : 'text-slate-500 hover:text-slate-900 active:scale-95'
           }`}
         >
-          <Info className={`w-5 h-5 ${currentTab === 'about' ? 'text-indigo-600' : 'text-slate-500'}`} />
-          <span>About</span>
+          <div className={`p-1 rounded-lg ${currentTab === 'about' ? 'bg-indigo-50 text-indigo-600' : 'text-slate-500'}`}>
+            <Info className="w-5 h-5" />
+          </div>
+          <span className="text-[10px] tracking-tight mt-0.5">About</span>
         </button>
       </div>
     </header>
