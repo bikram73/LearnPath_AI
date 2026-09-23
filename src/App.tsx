@@ -14,6 +14,7 @@ import { CourseCatalog } from './components/CourseCatalog';
 import { SampleProfiles } from './components/SampleProfiles';
 import { AboutPage } from './components/AboutPage';
 import { Footer } from './components/Footer';
+import { MobileBottomNav } from './components/MobileBottomNav';
 
 import { 
   getCoursesList, 
@@ -226,6 +227,9 @@ export default function App() {
 
       {/* Global Footer */}
       <Footer onNavigate={handleNavigate} />
+
+      {/* Mobile Fixed Bottom Navigation Bar */}
+      <MobileBottomNav currentTab={currentTab} onNavigate={handleNavigate} />
 
     </div>
   );

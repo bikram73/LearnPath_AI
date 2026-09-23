@@ -5,6 +5,7 @@ import {
   Compass, 
   UserPlus, 
   LayoutDashboard, 
+  LayoutGrid,
   BookOpen, 
   Users, 
   Info,
@@ -144,96 +145,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onNavigate }) => {
           </button>
         </div>
 
-      </div>
-
-      {/* Mobile Bottom Navigation Bar (Visible only on mobile devices) */}
-      <div 
-        id="mobile-bottom-nav"
-        className="md:hidden fixed bottom-0 inset-x-0 z-50 bg-white/95 backdrop-blur-xl border-t border-slate-200/90 py-1.5 px-2 flex items-center justify-around shadow-[0_-4px_25px_rgba(0,0,0,0.08)]"
-      >
-        <button
-          onClick={() => onNavigate('landing')}
-          className={`flex flex-col items-center justify-center py-1 px-2 rounded-xl transition-all cursor-pointer ${
-            currentTab === 'landing'
-              ? 'text-indigo-600 font-bold'
-              : 'text-slate-500 hover:text-slate-900 active:scale-95'
-          }`}
-        >
-          <div className={`p-1.5 rounded-xl transition-colors ${currentTab === 'landing' ? 'bg-indigo-50 text-indigo-600 shadow-xs' : 'text-slate-500'}`}>
-            <Compass className="w-5 h-5" />
-          </div>
-          <span className="text-[10px] tracking-tight mt-0.5">Home</span>
-        </button>
-
-        <button
-          onClick={() => onNavigate('wizard')}
-          className={`flex flex-col items-center justify-center py-1 px-2 rounded-xl transition-all cursor-pointer ${
-            currentTab === 'wizard'
-              ? 'text-indigo-600 font-bold'
-              : 'text-slate-500 hover:text-slate-900 active:scale-95'
-          }`}
-        >
-          <div className={`p-1.5 rounded-xl transition-colors ${currentTab === 'wizard' ? 'bg-indigo-50 text-indigo-600 shadow-xs' : 'text-slate-500'}`}>
-            <UserPlus className="w-5 h-5" />
-          </div>
-          <span className="text-[10px] tracking-tight mt-0.5">Profile</span>
-        </button>
-
-        <button
-          onClick={() => onNavigate('dashboard')}
-          className={`flex flex-col items-center justify-center py-1 px-2 rounded-xl transition-all cursor-pointer ${
-            currentTab === 'dashboard'
-              ? 'text-indigo-600 font-bold'
-              : 'text-slate-500 hover:text-slate-900 active:scale-95'
-          }`}
-        >
-          <div className={`p-1.5 rounded-xl transition-colors ${currentTab === 'dashboard' ? 'bg-indigo-50 text-indigo-600 shadow-xs' : 'text-slate-500'}`}>
-            <LayoutDashboard className="w-5 h-5" />
-          </div>
-          <span className="text-[10px] tracking-tight mt-0.5">Dashboard</span>
-        </button>
-
-        <button
-          onClick={() => onNavigate('catalog')}
-          className={`flex flex-col items-center justify-center py-1 px-2 rounded-xl transition-all cursor-pointer ${
-            currentTab === 'catalog'
-              ? 'text-indigo-600 font-bold'
-              : 'text-slate-500 hover:text-slate-900 active:scale-95'
-          }`}
-        >
-          <div className={`p-1.5 rounded-xl transition-colors ${currentTab === 'catalog' ? 'bg-indigo-50 text-indigo-600 shadow-xs' : 'text-slate-500'}`}>
-            <BookOpen className="w-5 h-5" />
-          </div>
-          <span className="text-[10px] tracking-tight mt-0.5">Catalog</span>
-        </button>
-
-        <button
-          onClick={() => onNavigate('profiles')}
-          className={`flex flex-col items-center justify-center py-1 px-2 rounded-xl transition-all cursor-pointer ${
-            currentTab === 'profiles'
-              ? 'text-indigo-600 font-bold'
-              : 'text-slate-500 hover:text-slate-900 active:scale-95'
-          }`}
-        >
-          <div className={`p-1.5 rounded-xl transition-colors ${currentTab === 'profiles' ? 'bg-indigo-50 text-indigo-600 shadow-xs' : 'text-slate-500'}`}>
-            <Users className="w-5 h-5" />
-          </div>
-          <span className="text-[10px] tracking-tight mt-0.5">Samples</span>
-        </button>
-
-        <button
-          onClick={() => onNavigate('about')}
-          className={`flex flex-col items-center justify-center py-1 px-2 rounded-xl transition-all cursor-pointer ${
-            currentTab === 'about'
-              ? 'text-indigo-600 font-bold'
-              : 'text-slate-500 hover:text-slate-900 active:scale-95'
-          }`}
-        >
-          <div className={`p-1.5 rounded-xl transition-colors ${currentTab === 'about' ? 'bg-indigo-50 text-indigo-600 shadow-xs' : 'text-slate-500'}`}>
-            <Info className="w-5 h-5" />
-          </div>
-          <span className="text-[10px] tracking-tight mt-0.5">About</span>
-        </button>
       </div>
     </header>
   );
