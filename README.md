@@ -4,6 +4,9 @@
 
 ![LearnPath AI Banner](https://img.shields.io/badge/LearnPath%20AI-Intelligent%20Course%20Recommendation%20Agent-4F46E5?style=for-the-badge)
 
+[![Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-Netlify-00AD9F?style=for-the-badge&logo=netlify&logoColor=white)](https://learn-path-ai.netlify.app/)
+[![GitHub Repo](https://img.shields.io/badge/📂%20Source%20Code-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bikram73/LearnPath_AI)
+
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19.0-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v4-38B2AC?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
@@ -13,6 +16,11 @@
 
 <p align="center">
   <b>Personalized, Graph-Aware Learning Path Generator with Prerequisite Resolution & AI Guidance</b>
+</p>
+
+<p align="center">
+  🌐 <b>Live Web App:</b> <a href="https://learn-path-ai.netlify.app/">https://learn-path-ai.netlify.app/</a> &nbsp;|&nbsp;
+  🐙 <b>GitHub Repository:</b> <a href="https://github.com/bikram73/LearnPath_AI">https://github.com/bikram73/LearnPath_AI</a>
 </p>
 
 </div>
@@ -132,8 +140,8 @@ learnpath-ai/
 
 ### 2️⃣ Clone Repository & Install Dependencies
 ```bash
-git clone https://github.com/your-username/learnpath-ai.git
-cd learnpath-ai
+git clone https://github.com/bikram73/LearnPath_AI.git
+cd LearnPath_AI
 npm install
 ```
 
