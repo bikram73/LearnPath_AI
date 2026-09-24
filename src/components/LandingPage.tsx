@@ -310,7 +310,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
               </div>
               <h3 className="text-lg font-bold text-slate-900 mb-2">Smart Rationale</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Gemini AI explains exactly why each course was selected and why it is ordered at that step.
+                Our AI Engine explains exactly why each course was selected and why it is ordered at that step.
               </p>
             </div>
 
@@ -383,9 +383,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({
               <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white font-extrabold flex items-center justify-center text-sm shadow-md">
                 04
               </div>
-              <h4 className="text-base font-bold text-slate-900">Gemini AI Refinement</h4>
+              <h4 className="text-base font-bold text-slate-900">Adaptive AI Synthesis</h4>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Gemini AI generates detailed course rationales, benefits, and personalized learning advice.
+                The AI engine generates detailed course rationales, benefits, and personalized learning advice.
               </p>
             </div>
 
@@ -523,7 +523,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                   </td>
                   <td className="p-4 font-semibold text-slate-900 bg-indigo-50/20 flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                    <span>Gemini AI explains why every course is chosen</span>
+                    <span>AI Engine explains why every course is chosen</span>
                   </td>
                 </tr>
 

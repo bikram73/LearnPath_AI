@@ -104,7 +104,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} Course Recommendation Agent v1.0. Built with Google AI Studio & Gemini.</p>
+          <p>© {new Date().getFullYear()} LearnPath AI Advisor v1.0. Powered by Graph-Aware Learning Intelligence.</p>
           <div className="flex items-center gap-4">
             <button onClick={() => onNavigate('about')} className="hover:text-slate-300 transition-colors cursor-pointer">
               Privacy & Local Engine

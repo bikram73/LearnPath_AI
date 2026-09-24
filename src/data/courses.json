@@ -112,7 +112,7 @@
     "prerequisites": ["TensorFlow & PyTorch Essentials"],
     "description": "Master Transformer architectures, Prompt Engineering, RAG (Retrieval-Augmented Generation), Vector Databases, and Multi-Agent Orchestration.",
     "skillsLearned": ["Generative AI", "LLMs", "RAG Systems", "Vector DBs", "LangChain/LlamaIndex"],
-    "keyTopics": ["Transformers & Attention Mechanism", "Gemini API & Prompting Techniques", "Vector Embeddings & ChromaDB/Pinecone", "RAG Pipelines & Agent Tool Use"],
+    "keyTopics": ["Transformers & Attention Mechanism", "LLM APIs & Prompt Engineering Techniques", "Vector Embeddings & ChromaDB/Pinecone", "RAG Pipelines & Agent Tool Use"],
     "iconName": "Sparkles",
     "popularForGoals": ["AI Engineer"]
   },

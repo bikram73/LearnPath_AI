@@ -290,7 +290,7 @@ export const RecommendationDashboard: React.FC<RecommendationDashboardProps> = (
                     {isExpanded && (
                       <div className="px-5 pb-5 pt-2 border-t border-slate-100 space-y-4 text-xs text-slate-700 animate-fadeIn">
                         
-                        {/* Gemini AI Rationale */}
+                        {/* AI Rationale */}
                         <div className="p-3.5 rounded-xl bg-indigo-50/70 border border-indigo-100 space-y-1">
                           <div className="flex items-center gap-1.5 text-indigo-700 font-bold">
                             <Sparkles className="w-3.5 h-3.5 text-indigo-600" />

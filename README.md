@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![LearnPath AI Banner](https://img.shields.io/badge/LearnPath%20AI-Intelligent%20Course%20Recommendation%20Agent-4F46E5?style=for-the-badge&logo=googlegemini&logoColor=white)
+![LearnPath AI Banner](https://img.shields.io/badge/LearnPath%20AI-Intelligent%20Course%20Recommendation%20Agent-4F46E5?style=for-the-badge)
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19.0-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
@@ -75,7 +75,7 @@
 - **tsx**: Ultra-fast TypeScript execution engine
 
 ### 🧠 Artificial Intelligence & Reasoning
-- **Generative AI SDK (`@google/genai`)**: Contextual rationale synthesis and conversational tutoring
+- **Generative AI Inference Engine**: Contextual rationale synthesis and conversational tutoring
 - **Deterministic Graph Engine**: Topological sorting and dependency resolution algorithm
 
 ---
@@ -194,7 +194,7 @@ npm start
                            │
                            ▼
 ┌────────────────────────────────────────────────────────┐
-│  AI Rationale Synthesis Layer (`@google/genai`)        │
+│  AI Rationale Synthesis Layer (LLM Engine)             │
 │  - Injects ordered courses + student profile context   │
 │  - Generates custom benefits, milestones & timeline    │
 │  - Fallback deterministic heuristic synthesis on error │
