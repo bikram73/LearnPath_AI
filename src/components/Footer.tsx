@@ -34,7 +34,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <ul className="space-y-2 text-slate-400">
               <li>
                 <button onClick={() => onNavigate('landing')} className="hover:text-white transition-colors cursor-pointer">
-                  Landing Page
+                  Home Page
                 </button>
               </li>
               <li>
