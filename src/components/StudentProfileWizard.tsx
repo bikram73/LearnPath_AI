@@ -314,13 +314,6 @@ export const StudentProfileWizard: React.FC<StudentProfileWizardProps> = ({
               <Save className="w-3.5 h-3.5" />
               <span>Save to Browser</span>
             </button>
-            <button
-              onClick={() => setIsProfileModalOpen(true)}
-              className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold flex items-center gap-1.5 transition-all border border-white/10 cursor-pointer"
-            >
-              <Edit3 className="w-3.5 h-3.5" />
-              <span>Manage Profile</span>
-            </button>
           </div>
         </div>
 
