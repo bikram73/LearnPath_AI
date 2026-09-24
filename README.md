@@ -239,12 +239,18 @@ To eliminate hallucination and guarantee zero phantom course recommendations, Le
 
 ## 📊 Confidence & Readiness Metrics
 
-The **Career Readiness Score** is calculated strictly via **Deterministic Skill Coverage Analysis**:
+The **Career Readiness Score** is calculated strictly via **Deterministic Skill Coverage & Prerequisite Analysis**:
 
-$$\text{Current Skill Coverage} = \left(\frac{|\text{Acquired Target Skills}|}{|\text{Total Target Skills}|}\right) \times 100$$
+$$\text{Career Readiness Score} = \text{clamp}\left(30, 96, \text{Baseline Skill Coverage} + \text{Roadmap Curriculum Boost}\right)$$
+
+Where:
+- **Baseline Skill Coverage**:
+  $$\text{Baseline Coverage} = \left(\frac{|\text{Acquired Target Skills}|}{\max(1, |\text{Total Target Skills}|)}\right) \times 100$$
+- **Roadmap Curriculum Boost**:
+  $$\text{Roadmap Boost} = \min\left(45, \left(\frac{|\text{Ordered Courses}|}{\max(1, |\text{Candidate Courses}|)}\right) \times 40\right)$$
 
 - **Current Skill Coverage**: The baseline percentage of prerequisites and target competencies the student currently possesses.
-- **Target Skill Coverage After Roadmap**: **100%** (guaranteed prerequisite and skill gap closure upon completing all ordered sequence courses).
+- **Projected Skill Coverage After Roadmap**: **100%** (guaranteed prerequisite and skill gap closure upon completing all ordered sequence courses).
 - **Composite Readiness Metric**: Calibrated purely deterministically from acquired prerequisite foundation plus roadmap curriculum coverage, completely eliminating arbitrary or non-deterministic AI score fluctuation.
 
 ---
