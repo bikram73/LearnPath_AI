@@ -244,19 +244,19 @@ export const StudentProfileWizard: React.FC<StudentProfileWizardProps> = ({
         </div>
 
         {/* LocalStorage Saved Status Card */}
-        <div className="p-4 rounded-2xl bg-gradient-to-r from-slate-900 to-indigo-950 text-white shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-cyan-300">
-              <HardDrive className="w-5 h-5" />
+        <div className="p-3.5 sm:p-4 rounded-2xl bg-gradient-to-r from-slate-900 to-indigo-950 text-white shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div className="flex items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/10 flex items-center justify-center text-cyan-300 shrink-0">
+              <HardDrive className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-bold tracking-tight">Active Browser Profile (LocalStorage):</span>
-                <span className="px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 text-[10px] font-bold border border-emerald-500/30">
-                  {hasLocalStorageProfile ? 'Synced' : 'Default'}
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-[11px] sm:text-xs font-bold tracking-tight">Active Browser Profile:</span>
+                <span className="px-1.5 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 text-[9px] sm:text-[10px] font-bold border border-emerald-500/30">
+                  {hasLocalStorageProfile ? 'LocalStorage Synced' : 'Default'}
                 </span>
               </div>
-              <p className="text-xs text-slate-300 mt-0.5">
+              <p className="text-[11px] sm:text-xs text-slate-300 mt-0.5 truncate">
                 <b className="text-white">{name}</b> • {background} ({goal})
               </p>
             </div>
@@ -265,17 +265,17 @@ export const StudentProfileWizard: React.FC<StudentProfileWizardProps> = ({
           <div className="flex items-center gap-2 w-full sm:w-auto">
             <button
               onClick={() => setIsProfileModalOpen(true)}
-              className="px-3 py-1.5 rounded-xl bg-white/15 hover:bg-white/25 text-white text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer"
+              className="flex-1 sm:flex-none justify-center px-3 py-1.5 rounded-xl bg-white/15 hover:bg-white/25 text-white text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer active:scale-95"
             >
               <Edit3 className="w-3.5 h-3.5 text-cyan-300" />
               <span>Edit Details</span>
             </button>
             <button
               onClick={saveCurrentToLocalStorage}
-              className="px-3.5 py-1.5 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shadow-xs"
+              className="flex-1 sm:flex-none justify-center px-3.5 py-1.5 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shadow-xs active:scale-95"
             >
               <Save className="w-3.5 h-3.5" />
-              <span>Save Changes</span>
+              <span>Save</span>
             </button>
           </div>
         </div>
