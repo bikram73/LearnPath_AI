@@ -66,12 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
 
           <button
-            onClick={() => {
-              if (onOpenProfileModal) {
-                onOpenProfileModal();
-              }
-              onNavigate('wizard');
-            }}
+            onClick={() => onNavigate('wizard')}
             id="nav-tab-wizard"
             className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer ${
               currentTab === 'wizard'
@@ -80,7 +75,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             }`}
           >
             <UserPlus className="w-3.5 h-3.5" />
-            <span>Profile</span>
+            <span>Wizard</span>
           </button>
 
           <button

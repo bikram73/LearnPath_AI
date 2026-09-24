@@ -43,12 +43,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
       </button>
 
       <button
-        onClick={() => {
-          if (onOpenProfileModal) {
-            onOpenProfileModal();
-          }
-          onNavigate('wizard');
-        }}
+        onClick={() => onNavigate('wizard')}
         className="flex flex-col items-center justify-center flex-1 py-1 transition-all cursor-pointer group select-none"
       >
         <div className={`w-10 h-8 rounded-2xl flex items-center justify-center transition-all ${
@@ -59,7 +54,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
         <span className={`text-[11px] mt-0.5 tracking-tight ${
           currentTab === 'wizard' ? 'font-bold text-[#4F46E5]' : 'font-medium text-slate-500 group-hover:text-slate-800'
         }`}>
-          Profile
+          Wizard
         </span>
       </button>
 
