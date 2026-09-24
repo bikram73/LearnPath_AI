@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavigationTab } from '../types';
-import { StoredUserProfile } from './UserProfileModal';
 import { 
   Sparkles, 
   Compass, 
@@ -9,10 +8,11 @@ import {
   BookOpen, 
   Users, 
   Info,
-  ChevronRight,
   User,
-  HardDrive
+  ChevronRight,
+  GraduationCap
 } from 'lucide-react';
+import { StoredUserProfile } from './UserProfileModal';
 
 interface NavbarProps {
   currentTab: NavigationTab;
@@ -23,30 +23,36 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ 
   currentTab, 
-  onNavigate,
+  onNavigate, 
   userProfile,
-  onOpenProfileModal
+  onOpenProfileModal 
 }) => {
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all">
+    <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200/80 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         
-        {/* Brand Logo */}
+        {/* Brand Logo & Title */}
         <div 
-          onClick={() => onNavigate('landing')} 
-          className="flex items-center gap-2.5 sm:gap-3 cursor-pointer group shrink-0"
-          id="navbar-brand-logo"
+          onClick={() => onNavigate('landing')}
+          className="flex items-center gap-2.5 cursor-pointer group select-none"
         >
-          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-indigo-600 via-indigo-500 to-cyan-500 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform shrink-0">
-            <Sparkles className="w-5 h-5 animate-pulse" />
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-700 to-cyan-500 p-0.5 shadow-md shadow-indigo-600/20 group-hover:scale-105 transition-transform flex items-center justify-center">
+            <div className="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center">
+              <GraduationCap className="w-5 h-5 text-cyan-300" />
+            </div>
           </div>
-          <div className="flex flex-col justify-center">
-            <span className="text-base sm:text-lg font-extrabold tracking-tight text-slate-900 font-sans leading-none">
-              LearnPath AI
-            </span>
-            <span className="block text-[10px] sm:text-[11px] font-medium text-slate-500 mt-1 leading-tight">
-              Prerequisite-Aware Learning Advisor
-            </span>
+          <div>
+            <div className="flex items-center gap-1.5">
+              <span className="font-extrabold text-base tracking-tight text-slate-900 group-hover:text-indigo-600 transition-colors">
+                LearnPath <span className="text-indigo-600 font-black">AI</span>
+              </span>
+              <span className="px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-200/60 uppercase tracking-widest hidden sm:inline-block">
+                Prerequisite Engine
+              </span>
+            </div>
+            <p className="text-[10px] text-slate-500 hidden sm:block font-medium">
+              Graph-Aware Curriculum & Career Advisor
+            </p>
           </div>
         </div>
 
@@ -158,7 +164,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               onClick={onOpenProfileModal}
               id="navbar-set-profile-btn"
-              className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-slate-100 hover:bg-indigo-50 text-slate-700 hover:text-indigo-700 border border-slate-200 text-xs font-semibold transition-all cursor-pointer"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 text-xs font-bold transition-all cursor-pointer shadow-xs animate-pulse"
+              title="Set your name and background in LocalStorage"
             >
               <User className="w-3.5 h-3.5 text-indigo-600" />
               <span>Set Profile</span>
